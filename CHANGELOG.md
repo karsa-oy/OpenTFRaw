@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   reads peaks + labels while skipping the profile signal, and the Python
   binding exposes `RawFile.centroid_labels(scan_number)` returning
   `mz`/`intensity`/`resolution`/`noise`/`baseline`/`signal_to_noise` arrays.
+- `RawFile.profile(scan_number)` (Python): returns the raw profile spectrum as
+  `(mz, intensity)` NumPy arrays, converting the frequency-domain bins via the
+  scan event's calibration coefficients. The Rust core already decoded profile
+  data (`ScanDataPacket.profile`, `Profile::to_mz_intensity`); this exposes it to
+  Python, which previously surfaced centroids only.
 
 ### Fixed
 
