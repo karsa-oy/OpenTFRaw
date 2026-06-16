@@ -22,6 +22,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   scan event's calibration coefficients. The Rust core already decoded profile
   data (`ScanDataPacket.profile`, `Profile::to_mz_intensity`); this exposes it to
   Python, which previously surfaced centroids only.
+- `RawFile.scan_parameters(scan_number)` (Python): returns the per-scan generic
+  ("trailer") parameters as a `{label: value}` dict (or `None`), mirroring the
+  vendor reader's trailer-extra information. Keys are the instrument's own
+  labels (e.g. `"HCD Energy V:"`, `"MS2 Isolation Width:"`); values keep their
+  stored type. The Rust core already decoded these (`scan_parameters` /
+  `GenericRecord`); this surfaces them to Python.
 
 ### Fixed
 
