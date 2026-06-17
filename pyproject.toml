@@ -3,11 +3,12 @@ requires = ["maturin>=1.5,<2.0"]
 build-backend = "maturin"
 
 [project]
-name = "opentfraw"
-description = "Rust parser for Thermo Fisher RAW mass spectrometry files"
+name = "mascope-opentfraw"
+description = "Karsa fork of opentfraw: Rust parser for Thermo Fisher RAW MS files, with Python profile / per-peak label / trailer accessors and Exploris scan-event decoding (imported as `opentfraw`)"
 readme = "README.md"
 license = { text = "Apache-2.0" }
 authors = [{ name = "Nathan Riley", email = "git@nathanriley.com" }]
+maintainers = [{ name = "Oskari Kausiala", email = "oskari.kausiala@karsa.fi" }]
 requires-python = ">=3.8"
 dynamic = ["version"]
 dependencies = ["numpy>=1.20"]
@@ -19,18 +20,18 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Sigilweaver/OpenTFRaw"
-Documentation = "https://sigilweaver.app/opentfraw/docs"
-Source = "https://github.com/Sigilweaver/OpenTFRaw"
-Changelog = "https://github.com/Sigilweaver/OpenTFRaw/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/karsa-oy/OpenTFRaw"
+Source = "https://github.com/karsa-oy/OpenTFRaw"
+Changelog = "https://github.com/karsa-oy/OpenTFRaw/releases"
+Upstream = "https://github.com/Sigilweaver/OpenTFRaw"
 
 [tool.maturin]
 features = ["pyo3/extension-module"]
 module-name = "opentfraw"
 manifest-path = "crates/opentfraw-py/Cargo.toml"
 include = [
-    { path = "LICENSE", format = "sdist" },
-    { path = "README.md", format = "sdist" },
+    { path = "LICENSE", format = ["sdist", "wheel"] },
+    { path = "NOTICE", format = ["sdist", "wheel"] },
+    { path = "README.md", format = ["sdist", "wheel"] },
     { path = "CHANGELOG.md", format = "sdist" },
-    { path = "README.md", format = "wheel" },
 ]

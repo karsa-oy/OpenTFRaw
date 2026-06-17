@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-06-17
+
+Karsa fork release, published to PyPI as `mascope-opentfraw` (imported as
+`opentfraw`). Bundles the additions and fixes below; each is also opened upstream
+as a pull request (see `NOTICE`). This release exists to make the features
+available ahead of an upstream release and will be retired once they land
+upstream.
+
 ### Added
 
 - Per-peak FT label data decoding for PacketHeader scans. The previously

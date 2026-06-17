@@ -1,5 +1,13 @@
 # OpenTFRaw
 
+> **Karsa fork.** This is a fork of [OpenTFRaw](https://github.com/Sigilweaver/OpenTFRaw)
+> by Nathan Riley, published to PyPI as **`mascope-opentfraw`** (still imported as
+> `opentfraw`). It adds Python accessors for profile spectra, per-peak FT labels,
+> and the per-scan trailer, plus Exploris scan-event decoding — each also opened
+> upstream as a pull request (see [`NOTICE`](NOTICE)). It exists to make these
+> available ahead of an upstream release and will be retired once they land
+> upstream. Apache-2.0, same as upstream.
+
 [![CI](https://github.com/Sigilweaver/OpenTFRaw/actions/workflows/ci.yml/badge.svg)](https://github.com/Sigilweaver/OpenTFRaw/actions/workflows/ci.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20470601.svg)](https://doi.org/10.5281/zenodo.20470601)
 [![crates.io](https://img.shields.io/crates/v/opentfraw.svg)](https://crates.io/crates/opentfraw)

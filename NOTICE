@@ -1,0 +1,26 @@
+mascope-opentfraw
+=================
+
+This is a fork of OpenTFRaw, distributed on PyPI as `mascope-opentfraw`
+(imported as `opentfraw`). It is licensed under Apache-2.0, the same license
+as the upstream project.
+
+Upstream project:
+  OpenTFRaw -- Copyright (c) Nathan Riley
+  https://github.com/Sigilweaver/OpenTFRaw
+
+This fork is maintained by Karsa Oy:
+  https://github.com/karsa-oy/OpenTFRaw
+
+Modifications relative to upstream opentfraw 1.1.0 (each submitted upstream as a
+pull request; this fork exists to make the features available on PyPI ahead of
+an upstream release, and will be retired once they land upstream):
+
+  - Python accessor for raw profile spectra (RawFile.profile)            [PR #1]
+  - Decode per-peak FT label data: resolution / noise / baseline,
+    exposed via RawFile.centroid_labels                                  [PR #4]
+  - Exploris scan-event decoding (freq->m/z coefficients + MS2 precursor) [PR #5]
+  - Python accessor for the per-scan trailer (RawFile.scan_parameters)   [PR #6]
+
+No vendor (Thermo Fisher) SDK or code is included; all decoding is derived from
+public datasets and independent analysis.
