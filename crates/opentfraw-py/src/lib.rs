@@ -124,6 +124,23 @@ impl RawFile {
         self.reader.instrument_model.map(|s| s.to_string())
     }
 
+    /// File creation (acquisition start) time as a Unix timestamp, in seconds.
+    ///
+    /// Read from the Xcalibur audit tag (a Windows FILETIME). Thermo records the
+    /// instrument's local wall-clock here with no timezone, so interpreting the
+    /// value as UTC reproduces that exact wall-clock (matching the legacy
+    /// `CreationDate`), independent of the reading machine's timezone. `None`
+    /// when the file carries no audit timestamp.
+    #[getter]
+    fn created(&self) -> Option<f64> {
+        let t = self.reader.header.audit_start.time;
+        if t == 0.0 {
+            None
+        } else {
+            Some(t)
+        }
+    }
+
     fn __len__(&self) -> usize {
         self.num_scans() as usize
     }

@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-06-18
+
+### Added
+
+- `RawFile.created`: the file creation (acquisition start) time as a Unix
+  timestamp in seconds, read from the Xcalibur audit tag (a Windows FILETIME).
+  Thermo records the instrument's local wall-clock there with no timezone, so
+  interpreting the value as UTC reproduces that exact wall-clock independent of
+  the reading machine's timezone. `None` when the file has no audit timestamp.
+
 ## [1.2.0] - 2026-06-17
 
 Karsa fork release, published to PyPI as `mascope-opentfraw` (imported as
